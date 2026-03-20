@@ -11,7 +11,7 @@ system = platform.system()
 arch   = platform.architecture()[0]
 if system == "Windows":
     if arch == '64bit':
-        dllPath = os.path.join(os.path.dirname(__file__), 'dependencies', system, 'x64', 'Thorlabs.MotionControl.KCube.Solenoid.dll')
+        dllPath = os.path.join(os.path.dirname(__file__), '../dependencies', system, 'x64', 'Thorlabs.MotionControl.KCube.Solenoid.dll')
     else:
          raise ValueError(f"Unsupported architecture: {arch}. Currently only 64bit is supported.")
 else:

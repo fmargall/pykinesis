@@ -26,7 +26,8 @@ where = ["."]
 include = ["pykinesis*"]
 
 [tool.setuptools.package-data]
-pyzwoasi = [
+pykinesis = [
+	"dependencies/Windows/x64/Thorlabs.MotionControl.DeviceManager.dll",
     "dependencies/Windows/x64/Thorlabs.MotionControl.KCube.Solenoid.dll"
 ]
 
