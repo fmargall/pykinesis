@@ -1,0 +1,1 @@
+include src/dependencies/Windows/x64/Thorlabs.MotionControl.KCube.Solenoid.dll
