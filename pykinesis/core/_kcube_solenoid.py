@@ -186,7 +186,7 @@ def _setOperatingMode(serialNo: str, operatingMode: _OperatingMode) -> None:
 # KCUBESOLENOID_API SC_SolenoidStates __cdecl SC_GetSolenoidState(char const * serialNo)
 lib.SC_GetSolenoidState.restype  =  ctypes.c_ubyte # Prefer unsigned rather than c_byte
 lib.SC_GetSolenoidState.argtypes = [ctypes.c_char_p]
-def _getSolenoidSate(serialNo: str) -> _SolenoidState:
+def _getSolenoidState(serialNo: str) -> _SolenoidState:
     state = lib.SC_GetSolenoidState(serialNo.encode("utf-8"))
 
     try:               return _SolenoidState(state)
