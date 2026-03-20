@@ -19,6 +19,7 @@ classifiers = [
 
 [project.urls]
 Repository = "https://github.com/fmargall/pykinesis.git"
+Tracker = "https://github.com/fmargall/pykinesis/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
