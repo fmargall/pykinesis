@@ -14,7 +14,7 @@ keywords = ["binding", "thorlabs", "kinesis", "sdk", "optics", "kcube"]
 classifiers = [
 	"Development Status :: 3 - Alpha",
 	"License :: OSI Approved :: MIT License",
-	"Operating System :: Microsoft :: Windows",,
+	"Operating System :: Microsoft :: Windows",
 ]
 
 [project.urls]
