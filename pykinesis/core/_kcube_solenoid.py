@@ -131,7 +131,7 @@ def _getDeviceListExt() -> list[str]:
     lib.TLI_GetDeviceListExt(buffer, bufferSize)
     devices = buffer.value.decode('utf-8')
 
-    return devices.split(',') if devices else []
+    return [device for device in devices.split(',') if device]
 
 # KCUBESOLENOID_API short __cdecl TLI_GetDeviceListByTypeExt(char *receiveBuffer, DWORD sizeOfBuffer, int typeID)
 # ------------------------- TO-DO -------------------------------------------------------------------------------
