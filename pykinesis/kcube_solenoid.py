@@ -6,6 +6,16 @@ class KCubeSolenoid:
 
     def __init__(self, solenoidIndex):
     @classmethod
+    def fromSerialNo(cls, serialNo: str):
+        _buildDeviceList()
+        deviceList = _getDeviceListExt()
+
+        # Check if serial number is valid
+        if serialNo not in deviceList:
+            raise ValueError(f"Serial number {serialNo} not found")
+
+        return cls(serialNo)
+    @classmethod
     def fromIndex(cls, index: int):
         # Check if index is valid
         _buildDeviceList()
