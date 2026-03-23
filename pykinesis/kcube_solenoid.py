@@ -5,6 +5,17 @@ from .core._kcube_solenoid import _buildDeviceList, _getDeviceListExt, _open, _c
 class KCubeSolenoid:
 
     def __init__(self, solenoidIndex):
+    @classmethod
+    def fromIndex(cls, index: int):
+        # Check if index is valid
+        _buildDeviceList()
+        deviceList = _getDeviceListExt()
+        if index >= len(deviceList):
+            raise IndexError(f"Solenoid index {index} out of range (available solenoids: {len(deviceList)})")
+
+        serialNo = deviceList[index]
+        return cls(serialNo)
+
     def __init__(self, serialNo: str):
 
         # Check if serial number is valid
