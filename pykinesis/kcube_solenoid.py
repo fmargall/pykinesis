@@ -4,7 +4,11 @@ from .core._kcube_solenoid import _buildDeviceList, _getDeviceListExt, _open, _c
 
 class KCubeSolenoid:
 
-    def __init__(self, solenoidIndex):
+    @staticmethod
+    def listDevices() -> list[str]:
+        _buildDeviceList()
+        return _getDeviceListExt()
+
     @classmethod
     def fromSerialNo(cls, serialNo: str):
         _buildDeviceList()
@@ -15,6 +19,7 @@ class KCubeSolenoid:
             raise ValueError(f"Serial number {serialNo} not found")
 
         return cls(serialNo)
+
     @classmethod
     def fromIndex(cls, index: int):
         # Check if index is valid
