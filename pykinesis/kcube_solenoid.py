@@ -54,6 +54,10 @@ class KCubeSolenoid:
         self.operatingMode  = "manual"
         self.operatingState = "inactive" # ie., closed
 
+    # Pythonic aliases
+    open  = openSolenoid
+    close = closeSolenoid
+
 
     def _closeInstance(self):
         if not self._isClosed:
