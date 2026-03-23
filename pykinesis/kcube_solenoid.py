@@ -15,6 +15,7 @@ class KCubeSolenoid:
         deviceList = _getDeviceListExt()
 
         # Check if serial number is valid
+        serialNo = str(serialNo)
         if serialNo not in deviceList:
             raise ValueError(f"Serial number {serialNo} not found")
 
@@ -33,9 +34,11 @@ class KCubeSolenoid:
 
     def __init__(self, serialNo: str):
 
-        # Check if serial number is valid
         _buildDeviceList()
         deviceList = _getDeviceListExt()
+        
+        # Check if serial number is valid
+        serialNo = str(serialNo)
         if serialNo not in deviceList:
             raise ValueError(f"Serial number {serialNo} not found")
 
