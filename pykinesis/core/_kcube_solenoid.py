@@ -155,7 +155,7 @@ def _open(serialNo: str) -> None:
     lib.SC_Open(serialNo.encode('utf-8'))
 
 # KCUBESOLENOID_API void __cdecl SC_Close(char const * serialNo)
-lib.SC_Close.restype  =  _error_restype
+lib.SC_Close.restype  =  None  # SC_Close() is a void function
 lib.SC_Close.argtypes = [ctypes.c_char_p]
 def _close(serialNo: str) -> None:
     lib.SC_Close(serialNo.encode('utf-8'))
